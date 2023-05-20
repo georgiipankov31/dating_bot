@@ -16,12 +16,14 @@ bot = telebot.TeleBot("6254079896:AAFjlsTdC6uPuWSKhxSaxhnHwptoviWBa_M")
 @bot.message_handler(commands=['start'])
 def start(massage):
     try:
-        bot.send_message(massage.chat.id, 'Привет!')
+        print(message.from_user.username)
+        cur.execute(f'insert into dating.users (user_id, user_nick, user_city) values ({message.chat.id}, {message.from_user.username}, "empty");')
+        con.commit()
     except:
         unknown_error(massage)
 def unknown_error(massage):
     try:
-        bot.send_message(massage.chat.id, 'Неизвсетная ошибка! Обартитесь в поддержку!')
+        bot.send_message(massage.chat.id, 'Неизвсетная ошибка! Напишите в поддержку!')
     except:
         print('Fatal Error')
 
