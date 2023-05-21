@@ -501,7 +501,7 @@ def main_menu(message):
         elif message.text == '😴':
             cur.execute(f"update dating.users  set is_actually  = false where user_id = {message.chat.id};")
             con.commit()
-            bot.send_message(message.from_user.id, 'Анкета была отключена. Теперь вы не будете попадаться никому.', reply_markup=markup_main)
+            bot.send_message(message.from_user.id, 'Анкета была отключена. Теперь вы не будете попадаться никому. Чтобы анкета была актуальной опять - просто нажми на ракету(🚀)', reply_markup=markup_main)
         elif (message.text == '❌'):
             bot.send_message(message.from_user.id, 'Отменено.', reply_markup=markup_main)
         else:
