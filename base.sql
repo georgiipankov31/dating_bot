@@ -1,3 +1,4 @@
+CREATE SCHEMA dating AUTHORIZATION goshavvpan;
 -- DROP TABLE dating.city;
 -- Города
 CREATE TABLE dating.city (
